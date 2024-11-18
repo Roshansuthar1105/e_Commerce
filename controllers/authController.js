@@ -1,5 +1,4 @@
 const User = require("../models/userModel.js");
-
 const home = async (req, res) => {
   try {
     res.send("This is api/auth route");
