@@ -5,6 +5,6 @@ authRouter
   .route("/")
   .get(authController.home)
 authRouter.route("/register").post(authController.register)
-authRouter.route("/login").get(authController.login)
+authRouter.route("/login").post(authController.login)
 
 module.exports = authRouter;
