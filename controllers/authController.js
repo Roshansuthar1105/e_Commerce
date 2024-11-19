@@ -11,12 +11,19 @@ const home = async (req, res) => {
 const register = async (req, res) => {
   try {
     const newuser = req.body;
-    const userExist =await User.findOne({email:newuser.email});
+    const userExist = await User.findOne({ email: newuser.email });
     if (userExist) {
-        return res.status(400).json({msg:"user already exists"});
+      return res.status(400).json({ msg: "user already exists" });
     }
-    await User.create(newuser);
-    res.status(201).json({msg:"user created"});
+
+    const createduser = await User.create(newuser);
+    res
+      .status(201)
+      .json({
+        message: "User Created Successfully !",
+        userId: createduser._id.toString(),
+        token: await createduser.generateToken(),
+      });
   } catch (error) {
     console.log(error);
     res.status(400).send({ error: error });
