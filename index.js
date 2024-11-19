@@ -19,7 +19,7 @@ app.use("/api/auth",authRouter);
 
 // use error middleware at the bottom most position
 app.use(errorMiddleware);
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 connectDB().then(()=>{
     app.listen(port,()=>console.log(`server is running at http://localhost:${port}`));
 })
