@@ -23,9 +23,14 @@ const register = async (req, res) => {
       userId: createduser._id.toString(),
       token: await createduser.generateToken(),
     });
-  } catch (error) {
+  } catch (err) {
+    const error = {
+      status:400,
+      message:err
+    }
     console.log(error);
-    res.status(400).send({ error: error });
+    next(error);
+    // res.status(400).send({ error: error });
   }
 };
 const login = async (req, res) => {

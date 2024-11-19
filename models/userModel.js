@@ -80,7 +80,7 @@ UserSchema.methods.generateToken = async function () {
 };
 UserSchema.methods.compairPass = async function (password) {
   try {
-    return await bcrypt.compare(password, this.password);
+    return bcrypt.compare(password, this.password);
   } catch (error) {
     console.log(error);
   }

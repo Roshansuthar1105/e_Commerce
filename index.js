@@ -2,6 +2,7 @@ require('dotenv').config(); // to access .env variables
 const express = require("express");
 const authRouter = require("./routes/authRoute.js");
 const connectDB = require("./utils/connectDB.js");
+const errorMiddleware = require('./middlewares/errorMiddleware.js');
 const app = express();
 
 
@@ -12,6 +13,12 @@ app.get("/",(req,res)=>{
     res.status(200).send("Server is ready to use");
 })
 app.use("/api/auth",authRouter);
+
+
+
+
+// use error middleware at the bottom most position
+app.use(errorMiddleware);
 const port = process.env.PORT;
 connectDB().then(()=>{
     app.listen(port,()=>console.log(`server is running at http://localhost:${port}`));
