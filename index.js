@@ -1,8 +1,10 @@
 require('dotenv').config(); // to access .env variables
 const express = require("express");
-const authRouter = require("./routes/authRoute.js");
 const connectDB = require("./utils/connectDB.js");
 const errorMiddleware = require('./middlewares/errorMiddleware.js');
+const authRouter = require("./routes/authRoute.js");
+const contactRouter = require("./routes/contactRouter.js");
+
 const app = express();
 
 
@@ -13,9 +15,7 @@ app.get("/",(req,res)=>{
     res.status(200).send("Server is ready to use");
 })
 app.use("/api/auth",authRouter);
-
-
-
+app.use("/api/contact",contactRouter);
 
 // use error middleware at the bottom most position
 app.use(errorMiddleware);

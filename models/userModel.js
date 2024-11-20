@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
+  cart: {
+    type: Array,
+    default: [],
+  },
   profileImage: {
     type: String,
     default: "",
