@@ -29,12 +29,10 @@ const UserSchema = new mongoose.Schema({
     default: "false",
   },
   products: {
-    type: Array,
-    default: [],
+    type: [String]
   },
   cart: {
-    type: Array,
-    default: [],
+    type: [String]
   },
   profileImage: {
     type: String,

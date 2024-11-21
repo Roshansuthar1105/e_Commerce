@@ -14,4 +14,17 @@ const allContacts = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-module.exports = { allContacts };
+const deleteContact = async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Logic to find and delete the user from the database
+    const deletedUser = await Contact.findByIdAndDelete(id);
+    if (!deletedUser) {
+      return res.status(404).json({ message: "Contact not found" });
+    }
+    res.status(200).json({ message: "contact deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to delete contact", error: error.message });
+  }
+};
+module.exports = { allContacts ,deleteContact};

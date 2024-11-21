@@ -14,5 +14,6 @@ adminRoute
 
 // contacts
 adminRoute.route("/contacts").get(adminContactsController.allContacts);
+adminRoute.route("/contact/:id").delete(adminContactsController.deleteContact);
 
 module.exports = adminRoute;

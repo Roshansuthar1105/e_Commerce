@@ -6,6 +6,7 @@ const errorMiddleware = require('./middlewares/errorMiddleware.js');
 const authRouter = require("./routes/authRoute.js");
 const contactRouter = require("./routes/contactRouter.js");
 const adminRoute = require("./routes/adminRoute.js");
+const productRoute = require("./routes/productRoute.js");
 
 const app = express();
 // use cors to give access
@@ -25,6 +26,7 @@ app.get("/",(req,res)=>{
 app.use("/api/auth",authRouter);
 app.use("/api/contact",contactRouter);
 app.use("/api/admin",adminRoute);
+app.use("/api/products",productRoute);
 // use error middleware at the bottom most position
 app.use(errorMiddleware);
 const port = process.env.PORT || 4000;
