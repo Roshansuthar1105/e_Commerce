@@ -29,7 +29,8 @@ app.use("/api/admin",adminRoute);
 app.use("/api/products",productRoute);
 // use error middleware at the bottom most position
 app.use(errorMiddleware);
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000; 
+app.set('port', port); // Specify the port for Render
 connectDB().then(()=>{
     app.listen(port,()=>console.log(`server is running at http://localhost:${port}`));
 })
