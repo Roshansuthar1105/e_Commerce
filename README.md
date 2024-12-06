@@ -11,6 +11,7 @@ This is the backend for an e-commerce application 🛍️. It is built using Nod
 * Admin dashboard for managing users and products 📊
 * Error handling and logging for debugging purposes 🐛
 * CORS enabled for communication with the frontend 🌐
+* ...
 
 ## Technologies Used 💻
 
