@@ -12,6 +12,7 @@ This is the backend for an e-commerce application 🛍️. It is built using Nod
 * Error handling and logging for debugging purposes 🐛
 * CORS enabled for communication with the frontend 🌐
 * ...
+* kdjdn
 
 ## Technologies Used 💻
 
