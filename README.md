@@ -23,7 +23,7 @@ This is the backend for an e-commerce application 🛍️. It is built using Nod
 * Zod for schema validation 📝
 * CORS for cross-origin resource sharing 🌐
 * Dotenv for environment variables 📁
-* hvxc
+
 
 ## Setup and Run 🏃‍♂️
 
